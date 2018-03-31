@@ -14,6 +14,8 @@ public:
 	Player(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate);
 	~Player();
 
+	void loadbackground(LPDIRECT3DDEVICE9 d3ddv);
+
 	LPD3DXSPRITE _SpriteHandler;
 
 	// IMPORTANT: This is only a SAMPLE, in real game, this should go to a separate class!!!
@@ -30,6 +32,7 @@ public:
 	LPDIRECT3DSURFACE9 Background;
 	CSprite * kitty_jump;
 	CSprite * kitty_left;
+	CSprite * tileSet;
 
 	MOVE_STATE MOVE_STATE;
 

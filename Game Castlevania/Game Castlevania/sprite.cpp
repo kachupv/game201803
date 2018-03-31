@@ -55,10 +55,10 @@ void CSprite::Render(LPDIRECT3DSURFACE9 Target, int X, int Y, bool isRight)
 {
 	RECT srect;
 
-	srect.left = (_Index % _SpritePerRow)*(_Width)+1;
-	srect.top = (_Index / _SpritePerRow)*(_Height)+1;
+	srect.left = (_Index % _SpritePerRow)*(_Width);
+	srect.top = (_Index / _SpritePerRow)*(_Height);
 	srect.right = srect.left + _Width;
-	srect.bottom = srect.top + _Height + 1;
+	srect.bottom = srect.top + _Height;
 
 	D3DXVECTOR3 position((float)X - _Width / 2, (float)Y - _Height / 2, 0);
 	//D3DXVECTOR3 center(0, 0, 0);
@@ -126,4 +126,10 @@ void CSprite::flip(LPDIRECT3DSURFACE9 Target, int X, int Y)
 
 	this->Render(Target, X, Y);
 	_SpriteHandler->SetTransform(&oldMt);
+}
+
+
+void CSprite::setIndex(int index)
+{
+	this->_Index = index;
 }

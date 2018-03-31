@@ -22,7 +22,8 @@ public:
 	void flip(LPDIRECT3DSURFACE9 Target, int X, int Y);
 
 	// Render current sprite at location (X,Y) at the target surface
-	void Render(LPDIRECT3DSURFACE9 Target, int X, int Y, bool isRight=false);
+	void Render(LPDIRECT3DSURFACE9 Target, int X, int Y, bool isRight = false);
+	void setIndex(int index);
 	~CSprite();
 };
 
