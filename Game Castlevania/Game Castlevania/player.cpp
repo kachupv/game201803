@@ -234,5 +234,4 @@ void Player::loadbackground(LPDIRECT3DDEVICE9 d3ddv)
 			tileSet->Render(_BackBuffer, j * 16, i * 16);
 		}
 	}
-
 }
