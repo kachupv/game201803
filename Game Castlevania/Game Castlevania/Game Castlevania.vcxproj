@@ -81,19 +81,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="game.h" />
+    <ClInclude Include="GameComponents\Game.h" />
+    <ClInclude Include="GameComponents\Resources.h" />
+    <ClInclude Include="GameComponents\Scene.h" />
+    <ClInclude Include="GameComponents\Sprite.h" />
+    <ClInclude Include="GameComponents\trace.h" />
+    <ClInclude Include="GameComponents\utils.h" />
+    <ClInclude Include="GameControllers\SceneManager.h" />
     <ClInclude Include="player.h" />
-    <ClInclude Include="sprite.h" />
-    <ClInclude Include="trace.h" />
-    <ClInclude Include="utils.h" />
+    <ClInclude Include="Scenes\PlayScene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp" />
+    <ClCompile Include="GameComponents\Game.cpp" />
+    <ClCompile Include="GameComponents\Scene.cpp" />
+    <ClCompile Include="GameComponents\Sprite.cpp" />
+    <ClCompile Include="GameComponents\trace.cpp" />
+    <ClCompile Include="GameComponents\utils.cpp" />
+    <ClCompile Include="GameControllers\SceneManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
-    <ClCompile Include="sprite.cpp" />
-    <ClCompile Include="trace.cpp" />
-    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="Scenes\PlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

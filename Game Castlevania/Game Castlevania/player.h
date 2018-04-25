@@ -3,12 +3,12 @@
 
 #include <d3dx9.h>
 
-#include "game.h"
-#include "sprite.h"
+#include "GameComponents\Game.h"
+#include "GameComponents\Sprite.h"
 
 enum MOVE_STATE { STAND, SIT, JUMP, MOVE, };
 
-class Player : public CGame
+class Player : public Game
 {
 public:
 	Player(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate);
@@ -30,9 +30,9 @@ public:
 	DWORD last_time;	 // this is to control the animate rate of kitty
 
 	LPDIRECT3DSURFACE9 Background;
-	CSprite * kitty_jump;
-	CSprite * kitty_left;
-	CSprite * tileSet;
+	Sprite * kitty_jump;
+	Sprite * kitty_left;
+	Sprite * tileSet;
 
 	MOVE_STATE MOVE_STATE;
 

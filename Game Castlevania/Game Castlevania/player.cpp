@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include "player.h"
-#include "utils.h"
+#include "GameComponents\utils.h"
 
 #define SIMON_IMAGE_PATH L"resources\\images\\simon.bmp"
 //#define KITTY_IMAGE_RIGHT L"kitty_right.bmp"
@@ -25,13 +25,12 @@
 #define ANIMATE_RATE 30
 
 Player::Player(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate) :
-CGame(hInstance, Name, Mode, IsFullScreen, FrameRate)
+Game(hInstance, Name, Mode, IsFullScreen, FrameRate)
 {
 	kitty_jump = NULL;
 	kitty_left = NULL;
 	tileSet = NULL;
 	MOVE_STATE = STAND;
-	
 }
 
 Player::~Player()
@@ -59,9 +58,9 @@ void Player::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	kitty_vx_last = 1.0f;
 	kitty_vy = 0;
 
-	kitty_jump = new CSprite(_SpriteHandler, KITTY_IMAGE_JUMP, 32, 48, 1, 1);
-	kitty_left = new CSprite(_SpriteHandler, KITTY_IMAGE_LEFT, 32, 64, 3, 3);
-	tileSet = new CSprite(this->_SpriteHandler, PATH_TILESET_STAGE12, 16, 16, 28, 10);
+	kitty_jump = new Sprite(_SpriteHandler, KITTY_IMAGE_JUMP, 32, 48, 1, 1);
+	kitty_left = new Sprite(_SpriteHandler, KITTY_IMAGE_LEFT, 32, 64, 3, 3);
+	tileSet = new Sprite(this->_SpriteHandler, PATH_TILESET_STAGE12, 16, 16, 28, 10);
 	//tileSet = CreateSurfaceFromFile(_d3ddv, PATH_TITESET_STAGE12);
 }
 
@@ -111,7 +110,7 @@ void Player::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 
 	// Kitty
 	// If there is a class for kitty, this should be Kitty->Render();
-	if (MOVE_STATE == MOVE)
+	/*if (MOVE_STATE == MOVE)
 	{
 		if (kitty_vx > 0)
 		{
@@ -142,7 +141,7 @@ void Player::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 	if (MOVE_STATE == SIT)
 	{
 		kitty_jump->Render(_BackBuffer, kitty_x, kitty_y, true);
-	}
+	}*/
 
 
 	_SpriteHandler->End();
@@ -231,7 +230,7 @@ void Player::loadbackground(LPDIRECT3DDEVICE9 d3ddv)
 			// Load TileSet
 			int index = array[j];
 			tileSet->setIndex(index);
-			tileSet->Render(_BackBuffer, j * 16, i * 16);
+			//tileSet->Render(_BackBuffer, j * 16, i * 16);
 		}
 	}
 }
